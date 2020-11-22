@@ -54,8 +54,8 @@ wsServer.on("request", function (request) {
       continue;
     }
     const T = new Twit({
-      consumer_key: "ywkvzrkLoWlJBDu1yYvBOgywg",
-      consumer_secret: "IPkHRKPkxx35K5Xgjf5173oHdJRaUyjZEf1xAocmPVhRsvwBNA",
+      consumer_key: process.env.TWITTER_CONSUMER_KEY,
+      consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
       access_token: oauth_token,
       access_token_secret: oauth_token_secret,
       timeout_ms: 60 * 1000,
