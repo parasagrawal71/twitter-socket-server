@@ -1,5 +1,5 @@
 const Twit = require("twit");
-const webSocketsServerPort = process.env.PORT || 8000;
+const webSocketsServerPort = process.env.PORT || 6002;
 const webSocketServer = require("websocket").server;
 const http = require("http");
 const server = http.createServer();
