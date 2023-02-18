@@ -1,4 +1,5 @@
 const Twit = require("twit");
+require("dotenv").config();
 const webSocketsServerPort = process.env.PORT || 6002;
 const webSocketServer = require("websocket").server;
 const http = require("http");
@@ -41,6 +42,7 @@ wsServer.on("request", function (request) {
     oauth_token_secret,
     screen_name,
   };
+
   console.log(`Connected: ${userID} in ${Object.getOwnPropertyNames(clients)}`);
 
   for (const client of Object.keys(clients)) {
@@ -68,7 +70,7 @@ wsServer.on("request", function (request) {
 
     stream &&
       stream.on("tweet", function (tweet) {
-        //   console.log("tweet", tweet);
+        // console.log("tweet", tweet);
         clients[client] &&
           clients[client].connection.sendUTF(
             JSON.stringify({ type: "NEW_TWEET", data: tweet })
