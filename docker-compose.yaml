@@ -1,0 +1,9 @@
+version: "3.4"
+services:
+  twitter-socket-server:
+    container_name: twitter-socket-server
+    image: twitter-socket-server:1.0.0
+    restart: always
+    env_file: ./.env
+    ports:
+      - "6002:6002"

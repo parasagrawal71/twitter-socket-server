@@ -5,8 +5,8 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "forever server.js",
-    "nodemon": "nodemon server.js"
+    "start": "NODE_ENV=production node server.js",
+    "start:dev": "NODE_ENV=development nodemon server.js"
   },
   "dependencies": {
     "axios": "^0.21.0",
